@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+</head>
+<style>
+    #map {
+        width: 100%;
+        height: 580px;
+        box-shadow: 5px 5px 5px #888;
+    }
+</style>
+
+<body>
+    <div id='map'> </div>
+    <script>
+        var map = L.map('map', {
+            center: [1.6200121, -75.6044208],
+            zoom: 14,
+        });
+        var osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution:
+                '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a>'
+                + 'contributors',
+            maxZoom: 30
+        }).addTo(map);
+
+        var iconuniversidad = L.icon({
+            iconUrl: 'https://sibcolombia.net/wp-content/uploads/2016/05/Logo-u-amazonia.png',
+            iconSize: [30, 30],
+            popupAnchor: [-1, -10]
+        });
+
+        var iconalcaldia = L.icon({
+            iconUrl: 'https://scontent-bog1-1.xx.fbcdn.net/v/t1.0-9/fr/cp0/e15/q65/89775137_1377389819138836_7502166366883938304_o.jpg?_nc_cat=102&ccb=2&_nc_sid=7aed08&_nc_ohc=9gq60SNjXzAAX-UTzXW&_nc_ht=scontent-bog1-1.xx&tp=14&oh=5ec293e33673947de2977a74848eb22e&oe=6042D21C',
+            iconSize: [30, 30],
+            popupAnchor: [-1, -10]
+        });
+
+        var iconcasa = L.icon({
+            iconUrl: 'https://images.vexels.com/media/users/3/157257/isolated/preview/d3bd73477873ff05a127e686ee688f65-icono-de-casa-blanco-y-negro-by-vexels.png',
+            iconSize: [30, 30],
+            popupAnchor: [-1, -10]
+        });
+        var circle = L.circle([1.615115, -75.613793], 500, {
+            color: 'gray', fillColor: '#f03',
+            fillOpacity: 0.5
+        }).addTo(map);
+        circle.bindPopup("Centro de Florencia");
+
+        var marker = L.marker([1.615115, -75.613793], {
+            icon: iconalcaldia, draggable: true, title: 'Ingrese aqui'
+        }).addTo(map)
+            .bindPopup('<b>Alcaldia de Florencia</b>')
+            .openPopup();
+
+        var polygon = L.polygon([
+            [1.615194, -75.613754],
+            [1.614470, -75.613562],
+            [1.614696, -75.612773],
+            [1.615439, -75.613005]
+        ]).addTo(map)
+            .bindPopup('Zona del Parque');
+
+        polygon.bindTooltip("Parque Central", {
+            permanent: false
+        })
+
+        var marker = L.marker([1.614923, -75.613243], {
+            draggable: true,
+        }).addTo(map)
+            .bindPopup('Parque Santander')
+            .openPopup();
+
+        var Casa = new L.LatLng(1.633043, -75.616233);
+        var Camino1 = new L.LatLng(1.634528, -75.616276);
+        var Camino2 = new L.LatLng(1.634668, -75.614605);
+        var Camino3 = new L.LatLng(1.636341, -75.614811);
+        var Camino4 = new L.LatLng(1.636338, -75.614806);
+        var Camino5 = new L.LatLng(1.637057, -75.614814);
+        var Camino6 = new L.LatLng(1.637346, -75.614651);
+        var Camino7 = new L.LatLng(1.637636, -75.614288);
+        var Camino8 = new L.LatLng(1.637754, -75.611783);
+        var Camino9 = new L.LatLng(1.63773, -75.611054);
+        var Camino10 = new L.LatLng(1.637558, -75.610305);
+        var Camino11 = new L.LatLng(1.637266, -75.609646);
+        var Camino12 = new L.LatLng(1.637126, -75.609399);
+        var Camino13 = new L.LatLng(1.636687, -75.608905);
+        var Camino14 = new L.LatLng(1.634107, -75.606502);
+        var Camino15 = new L.LatLng(1.633158, -75.60563);
+        var Camino16 = new L.LatLng(1.630381, -75.602996);
+        var Camino17 = new L.LatLng(1.629461, -75.602178);
+        var Camino18 = new L.LatLng(1.629247, -75.602082);
+        var Camino19 = new L.LatLng(1.628968, -75.602068);
+        var Camino20 = new L.LatLng(1.627456, -75.602476);
+        var Camino21 = new L.LatLng(1.625726, -75.603704);
+        var Camino22 = new L.LatLng(1.625179, -75.604346);
+        var Camino23 = new L.LatLng(1.625037, -75.604665);
+        var Camino24 = new L.LatLng(1.62475, -75.605625);
+        var Camino25 = new L.LatLng(1.624573, -75.60581);
+        var Camino26 = new L.LatLng(1.624123, -75.606113);
+        var Camino27 = new L.LatLng(1.623667, -75.606497);
+        var Camino27 = new L.LatLng(1.623335, -75.607135);
+        var Camino28 = new L.LatLng(1.623045, -75.607457);
+        var Camino29 = new L.LatLng(1.622865, -75.607583);
+        var Camino30 = new L.LatLng(1.622109, -75.607838);
+        var Camino31 = new L.LatLng(1.621986, -75.607918);
+        var Camino32 = new L.LatLng(1.621852, -75.607983);
+        var Camino33 = new L.LatLng(1.621139, -75.608624);
+        var Camino34 = new L.LatLng(1.621042, -75.608771);
+        var Camino35 = new L.LatLng(1.620822, -75.609769);
+        var Glorieta1 = new L.LatLng(1.620841, -75.609836);
+        var Glorieta2 = new L.LatLng(1.620847, -75.609914);
+        var Glorieta3 = new L.LatLng(1.620814, -75.609992);
+        var Glorieta4 = new L.LatLng(1.620718, -75.610088);
+        var Glorieta5 = new L.LatLng(1.620651, -75.610115);
+        var Glorieta6 = new L.LatLng(1.620517, -75.610107);
+        var Glorieta7 = new L.LatLng(1.620393, -75.609989);
+        var Glorieta8 = new L.LatLng(1.620372, -75.609836);
+        var Glorieta9 = new L.LatLng(1.620375, -75.609774);
+        var Camino36 = new L.LatLng(1.619887, -75.608347);
+        var Camino37 = new L.LatLng(1.6196, -75.60757);
+        var Camino38 = new L.LatLng(1.619485, -75.607218);
+        var Camino39 = new L.LatLng(1.619289, -75.606888);
+        var Camino40 = new L.LatLng(1.61897, -75.606615);
+        var Camino41 = new L.LatLng(1.617994, -75.605955);
+        var Camino42 = new L.LatLng(1.617399, -75.605595);
+        var Camino43 = new L.LatLng(1.617366, -75.605536);
+        var Camino44 = new L.LatLng(1.617401, -75.605451);
+        var Camino45 = new L.LatLng(1.618069, -75.605874);
+        var Camino46 = new L.LatLng(1.618793, -75.6064);
+        var Camino47 = new L.LatLng(1.620045, -75.605196);
+        var Camino48 = new L.LatLng(1.620128, -75.60519);
+        var Camino49 = new L.LatLng(1.620155, -75.605142);
+
+        var latlngs = [Casa, Camino1, Camino2, Camino3, Camino4, Camino5, Camino6, Camino7, Camino8, Camino9, Camino10, Camino11, Camino12, Camino13, Camino14, Camino15, Camino16, Camino17, Camino18, Camino19, Camino20, Camino21, Camino22, Camino23, Camino24, Camino25, Camino26, Camino27, Camino28, Camino29, Camino30, Camino31, Camino32, Camino33, Camino34, Camino35, Glorieta1, Glorieta2, Glorieta3, Glorieta4, Glorieta5, Glorieta6, Glorieta7, Glorieta8, Glorieta9, Camino36, Camino37, Camino38, Camino39, Camino40, Camino41, Camino42, Camino43, Camino44, Camino45, Camino46, Camino47, Camino48, Camino49];
+
+        var polyline = L.polyline(latlngs, { color: 'black' })
+            .addTo(map)
+            .bindPopup('Recorrido Casa - Universidad')
+            .openPopup();
+
+        var marker = L.marker([1.633046, -75.616284], {
+            icon: iconcasa, draggable: true, title: 'Ingrese aqui'
+        }).addTo(map)
+            .bindPopup('Mi Casa')
+            .openPopup();
+
+        var marker = L.marker([1.620396, -75.604496], {
+            icon: iconuniversidad, draggable: true, title: 'Ingrese aqui'
+        }).addTo(map)
+            .bindPopup('<b>Universidad de la Amazonia - Sede Principal</b>')
+            .openPopup();
+
+        L.control.scale().addTo(map);
+
+        function onMapClick(e) {
+            alert("Has hecho clic en " + e.latlng);
+        }
+        map.on('click', onMapClick);
+
+    </script>
+</body>
+
+</script>
+
+</html>
